@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <declare-styleable name="EmptyContentView">
+        <attr name="ecv_drawable" format="reference|string" />
+        <attr name="ecv_drawable_tint" format="reference|color" />
+        <attr name="ecv_description" format="reference" />
+        <attr name="ecv_action" format="reference|string" />
+        <attr name="ecv_action_tint" format="reference|color" />
+    </declare-styleable>
+</resources>

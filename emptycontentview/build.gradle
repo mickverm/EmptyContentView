@@ -1,0 +1,43 @@
+apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+ext {
+    bintrayRepo = 'maven'
+    bintrayName = 'EmptyContentView'
+
+    publishedGroupId = 'be.mickverm.widget'
+    libraryName = 'EmptyContentView'
+    artifact = 'emptycontentview'
+
+    libraryDescription = 'EmptyContentView widget based on AOSP.'
+
+    siteUrl = 'https://github.com/mickverm/emptycontentview'
+    gitUrl = 'https://github.com/mickverm/emptycontentview.git'
+
+    libraryVersion = '1.0.0'
+
+    developerId = 'Mickverm'
+    developerName = 'Michiel Vermeersch'
+    developerEmail = 'mick.vermeersch@gmail.com'
+
+    licenseName = 'The Apache Software License, Version 2.0'
+    licenseUrl = 'http://www.apache.org/licenses/LICENSE-2.0.txt'
+    allLicenses = ["Apache-2.0"]
+}
+
+android {
+    compileSdkVersion rootProject.ext.compileSdkVersion
+
+    defaultConfig {
+        minSdkVersion rootProject.ext.minSdkVersion
+        targetSdkVersion rootProject.ext.targetSdkVersion
+    }
+}
+
+dependencies {
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk8:$kotlinVersion"
+    implementation "androidx.appcompat:appcompat:$appcompatVersion"
+}
+
+apply from: 'install.gradle'
+apply from: 'bintray.gradle'

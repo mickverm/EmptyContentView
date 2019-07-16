@@ -1,0 +1,5 @@
+<resources>
+    <string name="app_name">EmptyContentView</string>
+    <string name="description_empty_contacts">To easily connect with friends and family, allow access to your contacts.</string>
+    <string name="grant_permission">grant permission</string>
+</resources>
