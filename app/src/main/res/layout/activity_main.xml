@@ -6,7 +6,7 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
-    <be.mickverm.widget.EmptyContentView
+    <be.mickverm.widget.emptycontentview.EmptyContentView
         android:id="@+id/empty_content_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"

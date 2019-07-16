@@ -3,7 +3,7 @@ package be.mickverm.emptycontentview.sample
 import android.os.Bundle
 import android.widget.Toast
 import androidx.appcompat.app.AppCompatActivity
-import be.mickverm.widget.EmptyContentView
+import be.mickverm.widget.emptycontentview.EmptyContentView
 
 class MainActivity : AppCompatActivity() {
 

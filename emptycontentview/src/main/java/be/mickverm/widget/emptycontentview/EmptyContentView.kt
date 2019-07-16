@@ -1,4 +1,4 @@
-package be.mickverm.widget
+package be.mickverm.widget.emptycontentview
 
 import android.content.Context
 import android.content.res.ColorStateList
@@ -69,7 +69,10 @@ class EmptyContentView : LinearLayout, View.OnClickListener {
         if (attrs == null)
             return
 
-        val a = context.obtainStyledAttributes(attrs, R.styleable.EmptyContentView)
+        val a = context.obtainStyledAttributes(
+            attrs,
+            R.styleable.EmptyContentView
+        )
         if (Build.VERSION.SDK_INT > Build.VERSION_CODES.LOLLIPOP)
             setImageResource(a.getDrawable(R.styleable.EmptyContentView_ecv_drawable))
         else
