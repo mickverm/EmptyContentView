@@ -28,7 +28,7 @@ class EmptyContentView : LinearLayout, View.OnClickListener {
     private lateinit var descriptionView: TextView
     private lateinit var actionView: TextView
 
-    private var listener: ((View) -> Unit)? = null
+    private var listener: OnActionClickListener? = null
 
     constructor(context: Context) : super(context) {
         init(context, null)
@@ -54,6 +54,10 @@ class EmptyContentView : LinearLayout, View.OnClickListener {
         defStyleRes: Int
     ) : super(context, attrs, defStyleAttr, defStyleRes) {
         init(context, attrs)
+    }
+
+    override fun onClick(view: View) {
+        listener?.onActionClicked(this)
     }
 
     private fun init(context: Context, attrs: AttributeSet?) {
@@ -162,11 +166,19 @@ class EmptyContentView : LinearLayout, View.OnClickListener {
         actionView.setTextColor(colors)
     }
 
-    fun setOnActionClickListener(listener: (View) -> Unit) {
+    fun setOnActionClickListener(listener: OnActionClickListener?) {
         this.listener = listener
     }
 
-    override fun onClick(view: View) {
-        listener?.invoke(view)
+    fun setOnActionClickListener(listener: (View) -> Unit) {
+        this.listener = object : OnActionClickListener {
+            override fun onActionClicked(view: View) {
+                return listener.invoke(view)
+            }
+        }
+    }
+
+    interface OnActionClickListener {
+        fun onActionClicked(view: View)
     }
 }
